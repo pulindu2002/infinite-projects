@@ -1,0 +1,27 @@
+<svg width="281" height="281" viewBox="0 0 281 281" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="40" height="40" stroke="black"/>
+<rect x="0.5" y="160.5" width="40" height="40" stroke="black"/>
+<path d="M80.5 0.5H120.5V40.5H80.5V0.5Z" stroke="black"/>
+<path d="M80.5 160.5H120.5V200.5H80.5V160.5Z" stroke="black"/>
+<rect x="40.5" y="40.5" width="40" height="40" stroke="black"/>
+<rect x="40.5" y="200.5" width="40" height="40" stroke="black"/>
+<rect x="0.5" y="240.5" width="40" height="40" stroke="black"/>
+<rect x="80.5" y="240.5" width="40" height="40" stroke="black"/>
+<rect x="160.5" y="240.5" width="40" height="40" stroke="black"/>
+<rect x="240.5" y="240.5" width="40" height="40" stroke="black"/>
+<rect x="120.5" y="40.5" width="40" height="40" stroke="black"/>
+<rect x="160.5" y="0.5" width="40" height="40" stroke="black"/>
+<path d="M120.5 200.5H160.5V240.5H120.5V200.5Z" stroke="black"/>
+<path d="M200.5 40.5H240.5V80.5H200.5V40.5Z" stroke="black"/>
+<path d="M240.5 0.5H280.5V40.5H240.5V0.5Z" stroke="black"/>
+<path d="M200.5 200.5H240.5V240.5H200.5V200.5Z" stroke="black"/>
+<path d="M240.5 160.5H280.5V200.5H240.5V160.5Z" stroke="black"/>
+<path d="M160.5 80.5H200.5V120.5H160.5V80.5Z" stroke="black"/>
+<path d="M0.5 80.5H40.5V120.5H0.5V80.5Z" stroke="black"/>
+<path d="M80.5 80.5H120.5V120.5H80.5V80.5Z" stroke="black"/>
+<path d="M40.5 120.5H80.5V160.5H40.5V140.5V120.5Z" stroke="black"/>
+<rect x="120.5" y="120.5" width="40" height="40" stroke="black"/>
+<path d="M200.5 120.5H240.5V160.5H200.5V120.5Z" stroke="black"/>
+<path d="M240.5 80.5H280.5V120.5H240.5V80.5Z" stroke="black"/>
+<rect x="160.5" y="160.5" width="40" height="40" stroke="black"/>
+</svg>
