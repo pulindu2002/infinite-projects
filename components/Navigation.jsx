@@ -65,7 +65,7 @@ export default function Navigation() {
           <div className="hidden lg:flex lg:flex-1 justify-center items-center gap-2 lg:justify-end">
             <ModeToggle />
             <Link
-              href="/auth"
+              href="/SignIn"
               className="text-sm font-semibold leading-6 text-foreground hover:text-gray-700"
             >
               Log in <span aria-hidden="true">&rarr;</span>
@@ -114,7 +114,7 @@ export default function Navigation() {
                 </div>
                 <div className="py-6">
                   <Link
-                    href="/auth"
+                    href="/SignIn"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-foreground"
                   >
                     Log in

@@ -28,7 +28,7 @@ export default function Auth() {
         </Link>
       </Button>
 
-      <div className="w-full flex justify-center items-center py-10">
+      <div className="w-full flex justify-center items-center py-2">
         <Card className={cn("w-[380px]")}>
           <CardHeader className="flex justify-center flex-col items-center text-center">
             <Image
@@ -38,7 +38,7 @@ export default function Auth() {
               height={50}
             />
             <CardTitle>🔥 Infinite Projects</CardTitle>
-            <CardDescription>Back to work lazy bitches</CardDescription>
+            <CardDescription>Sign Up</CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4 ">
             <form className="grid gap-4  ">
@@ -46,12 +46,22 @@ export default function Auth() {
                 <Label htmlFor="email">Email</Label>
                 <Input type="email" id="email" placeholder="Email" />
               </div>
+
+
               <div className="grid w-full max-w-sm items-center gap-1.5">
                 <Label htmlFor="email">Password</Label>
                 <Input type="password" id="email" placeholder="Password" />
               </div>
+
+
+              <div className="grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="email">Confirm Password</Label>
+                <Input type="password" id="email" placeholder="Password" />
+              </div>
+
+
               <Button className="w-full">
-                <CheckIcon className="mr-2 h-4 w-4" /> Login
+                <CheckIcon className="mr-2 h-4 w-4" /> Sign Up
               </Button>
             </form>
             <div className=" flex w-full items-center justify-center gap-5 overflow-hidden">
@@ -83,10 +93,10 @@ export default function Auth() {
                   d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
                 ></path>
               </svg>{" "}
-              Login with Google
+              SignUp with Google
             </Button>
           </CardContent>
-          <CardFooter>{/* Card footer */}</CardFooter>
+          <CardFooter>Already Have an accout? <span className="ml-3 hover:text-zinc-600"><Link href={"SignIn"}>Sign In</Link></span></CardFooter>
         </Card>
       </div>
     </div>
