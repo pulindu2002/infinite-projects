@@ -7,7 +7,7 @@ const Navbar = () => {
     const [search,setSearch] = useState();
     const pathName = usePathname().substring(1); 
     return (
-        <header className='pt-3  top-0 right-0 border-b'>
+        <header className='pt-3  top-0 right-0 border-b sticky'>
             <nav className='w-full p-3 flex justify-between '>
                 <section>
                     {/* icon */}

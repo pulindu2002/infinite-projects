@@ -1,6 +1,6 @@
 'use client'
 import { Button } from "@/components/ui/button";
-import Link from "next/link"import Link from "next/link";
+import Link from "next/link"
 export default function Hero() {
   return (
     <div className="relative container h-screen flex justify-center items-center overflow-hidden">
@@ -54,7 +54,7 @@ export default function Hero() {
           cracks.
         </p>
         <div className="flex justify-center w-full gap-3 sm:gap-8">
-          <Button>Get Started</Button>
+          <Button><Link href="/Dashboard">Get Started</Link></Button>
           <Button
             variant="outline"
             className="dark:bg-slate-800  border border-slate-900"
