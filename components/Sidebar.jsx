@@ -73,6 +73,8 @@ const OnSignOut = async ()=>{
      await SignOut();
      console.log('signed out successfully')
      deleteCookie('auth')
+     router.refresh();
+
      
 
    } catch (error) {

@@ -5,6 +5,9 @@ import { Dialog } from "@headlessui/react";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ModeToggle } from "./ThemeChanger";
 import Link from "next/link";
+import { UseAuth } from "@/context/AuthContext";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+
 
 const navigation = [
   { name: "Developers", href: "#" },
@@ -14,6 +17,7 @@ const navigation = [
 ];
 
 export default function Navigation() {
+  const {user} = UseAuth()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -64,12 +68,21 @@ export default function Navigation() {
           </div>
           <div className="hidden lg:flex lg:flex-1 justify-center items-center gap-2 lg:justify-end">
             <ModeToggle />
-            <Link
-              href="/SignIn"
-              className="text-sm font-semibold leading-6 text-foreground hover:text-gray-700"
-            >
-              Log in <span aria-hidden="true">&rarr;</span>
-            </Link>
+            <div className="w-[40px] h-[40px]">
+                  {user ? 
+                  <Avatar >
+              <AvatarImage className="rounded-full object-cover" src={user.photoURL} />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+             :
+                  <Link
+                    href="/SignIn"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-foreground"
+                  >
+                    Log in
+                  </Link>
+                  }
+                </div>
           </div>
         </nav>
         <Dialog
@@ -112,13 +125,20 @@ export default function Navigation() {
                     </a>
                   ))}
                 </div>
-                <div className="py-6">
+                <div className="py-6 w-[50px] h-[50px]">
+                  {user ? 
+                  <Avatar >
+              <AvatarImage className="rounded-full object-cover" src={user.photoURL} />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+             :
                   <Link
                     href="/SignIn"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-foreground"
                   >
                     Log in
                   </Link>
+                  }
                 </div>
               </div>
             </div>
