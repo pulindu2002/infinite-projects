@@ -3,7 +3,9 @@ import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import Image from 'next/image';
 
+
 const Navbar = () => {
+  
     const [search,setSearch] = useState();
     const pathName = usePathname().substring(1); 
     return (
