@@ -7,7 +7,7 @@ const Navbar = () => {
     const [search,setSearch] = useState();
     const pathName = usePathname().substring(1); 
     return (
-        <header className='pt-3  top-0 right-0 border-b sticky'>
+        <header className='pt-3  top-0 right-0 border-b'>
             <nav className='w-full p-3 flex justify-between '>
                 <section>
                     {/* icon */}
@@ -15,9 +15,9 @@ const Navbar = () => {
                 </section>
 
                 <section className='flex justify-evenly gap-x-4'>
-                  <div className='relative items-center'>
+                  <div className='relative items-center max-w-[360px] flex-1'>
                     <Image className='absolute right-4 top-[2px] ' src={"/search.svg"} width={20} height={20} />
-                    <input className='flex-initial w-[460px] bg-[#E7E7E7] rounded-full text-zinc-500 px-3 ' type='search'/>
+                    <input className='flex-initial w-[360px] bg-[#E7E7E7] rounded-full text-zinc-500 px-3 ' type='search'/>
                   </div>
 
                   <Image src={"/bell.svg"} width={20} height={20}/>

@@ -18,11 +18,19 @@ import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { UseAuth } from "@/context/AuthContext";
 
+import { deleteCookie } from "cookies-next";
 
 export default function Sidebar() {
+
+  const router = useRouter();
+  
+  const {user , SignOut} = UseAuth();
+  // console.log(user);
+
   const [ isNav,setIsNav] = useState(false)
 const [toggle,setToggle] = useState(null);
 
@@ -32,6 +40,7 @@ const isNavChange = ()=>{
 
 const ON = ()=>{
   setToggle(false)
+  
 }
 const OFF = ()=>{
   // change this
@@ -57,8 +66,24 @@ isActive("Dashboard")
 
 // isActive("Dashboard")
 
+
+
+const OnSignOut = async ()=>{
+   try {
+     await SignOut();
+     console.log('signed out successfully')
+     deleteCookie('auth')
+     
+
+   } catch (error) {
+    console.log(error)
+   }
+   
+
+}
+
   return (
-    <header  className={`pr-3 mr-8   h-full top-0 bottom-0 relative duration-1000 transition-all`}>
+    <header  className={`pr-3 mr-8   h-full top-0 bottom-0 relative duration-1000 transition-all max-lg:hidden`}>
     
         <div onMouseOver={ON} onMouseLeave={OFF} className={`${toggle ? "absolute left-[-280px] duration-1000 transition-all":""} w-[300px] h-full px-5 py-4 overflow-scroll scrollbar-track-gray-950/0 scrollbar-thin scrollbar-thumb-blue-950/0 overflow-x-hidden bg-[#020827]`}>
       {/* //? ------ sidebar header -------*/}
@@ -144,11 +169,11 @@ isActive("Dashboard")
         <div className="flex gap-3 items-center justify-between">
           <div className="flex gap-3 items-center">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarImage src={user? user.photoURL : "https://github.com/shadcn.png"} />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <div className="">
-              <h4 className="text-sm font-semibold">Pulindu</h4>
+              <h4 className="text-sm font-semibold">{user ? user.displayName : "user"}</h4>
               <p className="text-xs text-gray-400">Free Account</p>
             </div>
           </div>
@@ -156,7 +181,7 @@ isActive("Dashboard")
             <Link href={"/Settings"}><GearIcon className="h-5 w-5" /></Link>
           </div>
         </div>
-        <div className="flex cursor-pointer transition-all items-center gap-3 hover:bg-red-900 px-2 rounded-sm py-2">
+        <div onClick={OnSignOut} className="flex cursor-pointer transition-all items-center gap-3 hover:bg-red-900 px-2 rounded-sm py-2">
           {/* <ClockIcon className="h-5 w-5" /> */}
           <ExitIcon className="h-5 w-5" />
           <h4>Sign out</h4>

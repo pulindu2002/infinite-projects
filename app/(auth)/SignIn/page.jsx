@@ -1,3 +1,5 @@
+'use client'
+
 import { ArrowLeftIcon, CheckIcon } from "@radix-ui/react-icons";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,8 +16,28 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { UseAuth } from "@/context/AuthContext";
+import { useRouter } from 'next/navigation';
+import { setCookie } from "cookies-next";
 
 export default function Auth() {
+    const router = useRouter();
+   const {user , SignIn} = UseAuth();
+   console.log("user :"+ user)
+
+
+   const OnSignIn = async ()=>{
+    try {
+      
+      await SignIn();
+      // router.push("/Dashboard")
+      setCookie('auth','auth')
+    } catch (error) {
+      console.log(error)
+    }
+     
+   }
+
   return (
     <div className="container pt-5">
       <Button variant="secondary" asChild>
@@ -57,7 +79,7 @@ export default function Auth() {
             <div className=" flex w-full items-center justify-center gap-5 overflow-hidden">
               <Separator className="w-full " /> or <Separator />
             </div>
-            <Button className="w-full flex gap-3 items-center justify-center">
+            <Button onClick={OnSignIn} className="w-full flex gap-3 items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
