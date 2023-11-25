@@ -1,11 +1,22 @@
 'use client'
 import React, { useEffect } from 'react';
 import Gantt from 'frappe-gantt';
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import './styles.css';
+import AddNewTasks from '@/components/AddNewTasks';
 
 const Schedule = () => {
 
-  let mode 
+   const [position, setPosition] = React.useState("bottom")
 
 
   useEffect(() => {
@@ -89,9 +100,29 @@ document.querySelector(".chart-controls #month-btn").addEventListener("click", (
   }, []); // Empty dependency array means this effect runs once after the initial render
 
    
-console.log(mode)
+
   return (
-    <div>
+    <div className=''>
+      <section>
+          <AddNewTasks/>
+      </section>
+
+
+      {/* day week month change  */}
+      <div className="chart-controls">
+
+ <div className="button-cont">
+        
+
+        </div>
+       
+          <button className=' hover:bg-zinc-800 rounded-lg py-1 px-2 gap-x-2 ' id="day-btn">Day</button>
+          <button className=' hover:bg-zinc-800 rounded-lg py-1 px-2 gap-x-2 '  id="week-btn">Week</button>
+          <button className=' hover:bg-zinc-800 rounded-lg py-1 px-2 gap-x-2 ' id="month-btn">Month</button>
+        
+      </div>
+
+{/* gantt chartt harida  */}
       <main>
         <p className="chart-label">
         Timescale: <span id="current-timescale">Day</span>
@@ -100,14 +131,7 @@ console.log(mode)
       <div>
         <svg id="gantt"></svg>
       </div>
-      <div className="chart-controls">
-        
-        <div className="button-cont">
-          <button className='p-1 hover:bg-zinc-300' id="day-btn">Day</button>
-          <button  id="week-btn">Week</button>
-          <button id="month-btn">Month</button>
-        </div>
-      </div>
+      
       </main>
     </div>
   );
