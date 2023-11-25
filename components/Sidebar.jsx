@@ -29,7 +29,7 @@ export default function Sidebar() {
   const router = useRouter();
   const path = usePathname(); 
    const [ isNav,setIsNav] = useState(false)
-const [toggle,setToggle] = useState(null);
+const [toggle,setToggle] = useState(path === '/Schedule' ? true : null);
   
   const {user , SignOut} = UseAuth();
   // console.log(user);
@@ -89,9 +89,9 @@ const OnSignOut = async ()=>{
 }
 
   return (
-    <header  className={`pr-3 mr-8   h-full top-0 bottom-0 relative duration-1000 transition-all max-lg:hidden`}>
+    <header  className={`pr-3 mr-8   h-full top-0 bottom-0 relative duration-1000 transition ease-out max-lg:hidden`}>
     
-        <div onMouseOver={ON} onMouseLeave={OFF} className={`${toggle ? "absolute left-[-280px] duration-1000 transition-all":""} w-[300px] h-full px-5 py-4 overflow-scroll scrollbar-track-gray-950/0 scrollbar-thin scrollbar-thumb-blue-950/0 overflow-x-hidden bg-[#020827]`}>
+        <div onMouseOver={ON} onMouseOut={OFF} className={`${toggle ? "absolute left-[-280px] ":""} duration-1000 transition ease-out w-[300px] h-full px-5 py-4 overflow-scroll scrollbar-track-gray-950/0 scrollbar-thin scrollbar-thumb-blue-950/0 overflow-x-hidden bg-[#020827]`}>
       {/* //? ------ sidebar header -------*/}
       <div className="flex items-center justify-between">
         <h1>

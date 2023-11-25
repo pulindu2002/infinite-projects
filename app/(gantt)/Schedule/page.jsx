@@ -95,9 +95,8 @@ document.querySelector(".chart-controls #month-btn").addEventListener("click", (
     ganttChart.change_view_mode("Month");
 })
 
-    // You might want to update the chart when the tasks change
-    // ganttChart.refresh(tasks);
-  }, []); // Empty dependency array means this effect runs once after the initial render
+    
+  }, []); 
 
    
 
@@ -108,7 +107,7 @@ document.querySelector(".chart-controls #month-btn").addEventListener("click", (
       </section>
 
 
-      {/* day week month change  */}
+      {/* day week month change karnne metanin pahala */}
       <div className="chart-controls">
 
  <div className="button-cont">
@@ -122,7 +121,7 @@ document.querySelector(".chart-controls #month-btn").addEventListener("click", (
         
       </div>
 
-{/* gantt chartt harida  */}
+{/* gantt chartt eka  */}
       <main>
         <p className="chart-label">
         Timescale: <span id="current-timescale">Day</span>
