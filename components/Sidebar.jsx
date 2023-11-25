@@ -29,7 +29,7 @@ export default function Sidebar() {
   const router = useRouter();
   const path = usePathname(); 
    const [ isNav,setIsNav] = useState(false)
-const [toggle,setToggle] = useState(path === '/Schedule' ? true: null);
+const [toggle,setToggle] = useState(null);
   
   const {user , SignOut} = UseAuth();
   // console.log(user);
@@ -41,11 +41,13 @@ const isNavChange = ()=>{
 }
 
 const ON = ()=>{
+ 
   setToggle(false)
   
 }
 const OFF = ()=>{
   // change this
+   path === '/Schedule' ?  setToggle(true) :
   setToggle(isNav)
 }
 
