@@ -41,7 +41,7 @@ const isNavChange = ()=>{
 }
 
 const ON = ()=>{
- 
+ path === '/Schedule' ?  setToggle(false) :
   setToggle(false)
   
 }
