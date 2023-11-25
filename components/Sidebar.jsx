@@ -57,7 +57,7 @@ const pathName = usePathname();
 
 const isActive = (path)=>{
   return(
-  pathName.startsWith(path) ? "bg-zinc-500" : "" )
+  pathName.startsWith(path) ? "bg-blue-900 " : "" )
 }
 
 isActive("Dashboard")
