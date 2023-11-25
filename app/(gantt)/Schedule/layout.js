@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
           
 
         <section className="w-full">
-          <Navbar/>
+          {/* <Navbar/> */}
           <div className="p-4 ">
             {children}
           </div>
