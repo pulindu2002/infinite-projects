@@ -7,12 +7,12 @@ export function middleware(request) {
   const reqPath = request.nextUrl.pathname
   console.log(reqPath)
 
-  if(!verify){
-      return NextResponse.redirect(new URL('/SignIn', request.url))
-  }
-  if(verify && reqPath === '/SignIn'){
-      return NextResponse.redirect(new URL('/Dashboard', request.url))
-  }
+  // if(!verify){
+  //     return NextResponse.redirect(new URL('/SignIn', request.url))
+  // }
+  // if(verify && reqPath === '/SignIn'){
+  //     return NextResponse.redirect(new URL('/Dashboard', request.url))
+  // }
 
   
 }
